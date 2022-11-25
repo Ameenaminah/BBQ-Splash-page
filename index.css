@@ -1,12 +1,12 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 body {
   margin: 0;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 1rem;
   color: #404040;
-  text-align: center;
 }
 
 /* =================
@@ -14,54 +14,61 @@ body {
    ================= */
 
 h1 {
-  font-size: 2.25rem;
-  font-weight: 300;
+  font-size: 2.5rem;
+  font-weight: 400;
   color: #fff;
   margin: 0;
 }
-h1 + p {
-  color: #f18119;
-  font-weight: 900;
-  font-size: 1.3125rem;
-  text-transform: uppercase;
-  margin: 0;
-}
 
 h2 {
-  font-size: 1.3125rem;
-  margin: 0;
+  font-size: 2.25rem;
+  margin: 0.167em 0;
 }
 
-h2 + p {
+p {
+  font-size: 1.125rem;
+  line-height: 1.35;
+}
+
+.beta-text {
+  font-weight: 900;
+}
+
+.subheading {
+  margin-bottom: 0.5em;
+}
+
+.beta-text,
+.top-text,
+.subheading {
+  text-transform: uppercase;
   font-weight: 900;
   color: #f18119;
-  margin-top: 0;
-  text-transform: uppercase;
 }
+
 .top-text {
-  font-size: 0.625rem;
-  font-weight: 900;
-  color: #f18119;
-  text-transform: uppercase;
   order: -1;
-  border-top: 5px solid #f18119;
-  margin: 0;
-  padding-top: 2px;
-}
-
-h2 {
-  font-size: 1.3125rem;
-  margin: 0;
+  font-size: 0.875rem;
+  padding-top: 0.25em;
+  border-top: 5px solid;
+  margin: 0 auto;
 }
 
 .fine-print {
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   letter-spacing: 1px;
-  margin-top: 0;
-  text-transform: uppercase;
 }
-strong {
-  font-weight: 900;
+
+/* =================
+    Flex containers
+   ================= */
+
+.intro,
+.main-content {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
 /* =================
@@ -69,14 +76,14 @@ strong {
    ================= */
 
 .intro {
-  background-image: url(bugatti.jpg);
-  background-color: #404040;
+  background: #404040 url(bugatti.jpg);
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;
-  display: flex;
-  flex-direction: column;
-  padding: 0 0.5em 2em;
+  justify-content: space-between;
+  min-height: 250px;
+  text-align: center;
+  padding-bottom: 1.5em;
 }
 
 /* =================
@@ -84,58 +91,41 @@ strong {
    ================= */
 
 .main-content {
-  padding: 2em 1em;
+  align-items: center;
+  padding-top: 2.5em;
 }
 
-/* > means direct child */
-/* .intro > *,
-.main-content > * {
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-} */
-
-/* Another way */
-.container {
-  max-width: 400px;
-  margin: 0 auto;
+.img-main {
+  width: 120px;
+  border-radius: 50%;
 }
 
-.container-intro {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 50vh;
-}
 /* =================
    form
    ================= */
 
-.email-collector {
-  width: 80%;
-  max-width: 300px;
-}
-
 input,
-.btn {
+button {
+  font-family: inherit;
   width: 100%;
   border-radius: 5px;
 }
+
 input {
-  font-family: inherit;
-  text-align: inherit;
+  padding: 0.5em;
   margin-bottom: 0.75em;
-  padding: 0.25em;
   border: 1px solid #404040;
   transform: scale(1);
   transition: transform 250ms;
 }
+
 input:focus {
+  outline: none;
   transform: scale(1.1);
 }
+
 .btn {
-  display: inline-block;
-  padding: 1em 1.5em;
+  padding: 1em 0;
   font-size: 0.625rem;
   text-transform: uppercase;
   font-weight: 900;
@@ -143,12 +133,15 @@ input:focus {
   border: 0;
   cursor: pointer;
 }
+
 .btn-primary {
   background: linear-gradient(to left, #ff713b, #ffa51d);
   color: white;
   transform: scale(1);
   transition: 500ms;
+  margin-top: 1em;
 }
+
 .btn-primary:hover,
 .btn-primary:focus {
   transform: scale(1.1);
@@ -158,31 +151,34 @@ input:focus {
    media queries 
    ================= */
 
-@media (min-width: 600px) {
+@media (min-width: 576px) {
   body {
-    font-size: 1.125rem;
     display: flex;
   }
 
   h1 {
-    font-size: 3.5rem;
+    font-size: 5vw;
   }
 
-  h2,
-  h1 + p {
-    font-size: 1.75rem;
+  h2 {
+    font-size: 2.625rem;
   }
+
+  .beta-text {
+    font-size: 1.25rem;
+  }
+
   .intro,
   .main-content {
     width: 50%;
+  }
+
+  .intro {
     min-height: 100vh;
   }
+
   .main-content {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-  }
-  .container-intro {
-    height: 100%;
+    padding-top: 0;
   }
 }
