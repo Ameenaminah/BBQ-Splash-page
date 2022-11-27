@@ -12,7 +12,7 @@ A responsive splash page
 
 ## Links
 
-- Live Site URL: https://symphonious-salmiakki-63dc32.netlify.app/
+- Live Site URL: https://https://my-splash-page.netlify.app/
 
 ## Built with
 
