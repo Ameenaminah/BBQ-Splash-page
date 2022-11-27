@@ -12,7 +12,7 @@ A responsive splash page
 
 ## Links
 
-- Live Site URL: https://my-splash-page.netlify.app/
+- Live Site URL: https://https://my-splash-page.netlify.app/ {:target="\_blank"}
 
 ## Built with
 
